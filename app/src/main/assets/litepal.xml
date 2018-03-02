@@ -1,0 +1,9 @@
+<litepal>
+    <dbname value="CatWeather" />
+    <version value='1' />
+    <list>
+        <mapping class="com.spencerwoo.android.catinthebox.db.Province" />
+        <mapping class="com.spencerwoo.android.catinthebox.db.City" />
+        <mapping class="com.spencerwoo.android.catinthebox.db.Country" />
+    </list>
+</litepal>
