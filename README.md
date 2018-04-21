@@ -1,5 +1,3 @@
-![img](https://i.loli.net/2018/04/21/5adae5f43ba75.jpg)
-
 <div align="center">
 
 # WEATHER MEOW
@@ -9,6 +7,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/spencerwoo98/CatInTheBox)
 
 </div>
+
+![img](https://i.loli.net/2018/04/21/5adae5f43ba75.jpg)
 
 # Things to know
 
