@@ -35,7 +35,7 @@ The main UI is to pay tribute to Apple's App Store Design (iOS 11.3 Version).
 # Contributing
 
 1. Fork the repository.
-2. Clone the repository via `git clone https://github.com/spencerwoo98/CatInTheBox.git`
+2. Clone the repository via `git clone https://github.com/spencerwoo98/WeatherMeow.git`
 3. Open the project folder via Android Studio and download dependencies.
 3. Make some changes!
 4. Make a pull request. :wink:
