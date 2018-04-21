@@ -14,11 +14,11 @@
 
 > Proudly produced by [CatInTheBox.Inc](https://spencerwoo.com)
 
-This project is to tribute my Java and Android Development teacher [Mr.Jin](http://jinxuliang.com) who is a spectacular man with great knowledge and is willing to give.
+This project is to pay tribute to my Java and Android Development teacher [Mr.Jin](http://jinxuliang.com) who is a spectacular man with great knowledge and is willing to give.
 
 The APP: **WEATHER MEOW** is basically a simple application to show the current weather. It is built according to, but not all based on, **Material Design Guidelines.**
 
-The main UI is to tribute Apple's App Store Design (iOS 11.3 Version).
+The main UI is to pay tribute to Apple's App Store Design (iOS 11.3 Version).
 
 # Dependencies
 
