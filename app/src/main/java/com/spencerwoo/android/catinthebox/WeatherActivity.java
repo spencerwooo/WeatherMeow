@@ -118,12 +118,13 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
-        String bingPic = prefs.getString("bing_pic", null);
-        if (bingPic != null) {
-            Glide.with(this).load(bingPic).into(bingPicImg);
-        } else {
-            loadBingPic();
-        }
+//        String bingPic = prefs.getString("bing_pic", null);
+//        if (bingPic != null) {
+//            Glide.with(this).load(bingPic).into(bingPicImg);
+//        } else {
+//            loadBingPic();
+//        }
+        loadBingPic();
 
     }
 
@@ -179,7 +180,7 @@ public class WeatherActivity extends AppCompatActivity {
         String degree = weather.now.temperature + "℃";
         String weatherInfo = weather.now.more.info;
         titleCity.setText(cityName);
-        titleUpdateTime.setText(updateTime);
+        titleUpdateTime.setText("Updated on: " + updateTime);
         degreeText.setText(degree);
         weatherInfoText.setText(weatherInfo);
         forecastLayout.removeAllViews();
@@ -215,28 +216,16 @@ public class WeatherActivity extends AppCompatActivity {
 
 
     private void loadBingPic() {
-        String requestBingPic = "http://guolin.tech/api/bing_pic";
-        HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
+        final String bingPic = "https://source.unsplash.com/collection/1976082/800x600";
+//        SharedPreferences.Editor editor = PreferenceManager.
+//                getDefaultSharedPreferences(WeatherActivity.this).edit();
+//        editor.putString("bing_pic", bingPic);
+//        editor.apply();
+        runOnUiThread(new Runnable() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                final String bingPic = response.body().string();
-                SharedPreferences.Editor editor = PreferenceManager.
-                        getDefaultSharedPreferences(WeatherActivity.this).edit();
-                editor.putString("bing_pic", bingPic);
-                editor.apply();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
-                    }
-                });
+            public void run() {
+                Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
             }
         });
     }
-
 }
