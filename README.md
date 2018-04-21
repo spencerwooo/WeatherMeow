@@ -5,9 +5,7 @@
 # WEATHER MEOW
 
 ![love](https://img.shields.io/badge/Made%20with-LOVE-ff69b4.svg)
-
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/spencerwoo98/CatInTheBox)
 
 </div>
