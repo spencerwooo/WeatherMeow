@@ -1,6 +1,5 @@
 package com.spencerwoo.android.catinthebox;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -22,7 +21,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.spencerwoo.android.catinthebox.gson.Forcast;
 import com.spencerwoo.android.catinthebox.gson.Weather;
-import com.spencerwoo.android.catinthebox.service.AutoUpdateService;
 import com.spencerwoo.android.catinthebox.util.HttpUtil;
 import com.spencerwoo.android.catinthebox.util.Utility;
 
@@ -35,11 +33,8 @@ import okhttp3.Response;
 public class WeatherActivity extends AppCompatActivity {
 
     public DrawerLayout drawerLayout;
-
-    private Button navButton;
-
     public SwipeRefreshLayout swipeRefresh;
-
+    private Button navButton;
     private String mWeatherId;
 
     private ScrollView weatherLayout;
@@ -163,6 +158,8 @@ public class WeatherActivity extends AppCompatActivity {
                             editor.putString("weather", responseText);
                             editor.apply();
                             showWeatherInfo(weather);
+//                            Intent intent = new Intent(this, AutoUpdateService.class);
+//                            startService(intent);
                         } else {
                             Toast.makeText(WeatherActivity.this, "啊，失败了...qaq", Toast.LENGTH_SHORT).show();
                         }
@@ -213,9 +210,6 @@ public class WeatherActivity extends AppCompatActivity {
         sportText.setText(sport);
 
         weatherLayout.setVisibility(View.VISIBLE);
-
-        Intent intent = new Intent(this, AutoUpdateService.class);
-        startService(intent);
 
     }
 
