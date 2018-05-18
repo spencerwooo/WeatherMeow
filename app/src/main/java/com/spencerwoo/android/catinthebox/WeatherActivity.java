@@ -2,6 +2,7 @@ package com.spencerwoo.android.catinthebox;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -19,6 +20,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.imagepipeline.core.ImagePipeline;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.spencerwoo.android.catinthebox.gson.Forcast;
 import com.spencerwoo.android.catinthebox.gson.Weather;
 import com.spencerwoo.android.catinthebox.util.HttpUtil;
@@ -51,7 +58,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView carWashText;
     private TextView sportText;
 
-    private ImageView bingPicImg;
+    private com.facebook.drawee.view.SimpleDraweeView bingPicImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +94,7 @@ public class WeatherActivity extends AppCompatActivity {
         bingPicImg = findViewById(R.id.bing_pic_img);
 
         swipeRefresh = findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefresh.setColorSchemeResources(R.color.holdingColor);
 
         // Get weather info
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -108,6 +115,21 @@ public class WeatherActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 requestWeather(mWeatherId);
+
+                long updateTime = System.currentTimeMillis();
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this);
+                long lastUpdateTime = preferences.getLong("image_update_time", 0);
+
+                if (updateTime - lastUpdateTime > 24 * 60 * 60 * 3600) {
+                    final ImagePipeline imagePipeline = Fresco.getImagePipeline();
+                    imagePipeline.clearCaches();
+                }
+                loadUnsplashImage();
+
+                SharedPreferences.Editor editor = PreferenceManager.
+                        getDefaultSharedPreferences(WeatherActivity.this).edit();
+                editor.putLong("image_update_time", updateTime);
+                editor.apply();
             }
         });
 
@@ -117,14 +139,6 @@ public class WeatherActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
-
-//        String bingPic = prefs.getString("bing_pic", null);
-//        if (bingPic != null) {
-//            Glide.with(this).load(bingPic).into(bingPicImg);
-//        } else {
-//            loadBingPic();
-//        }
-        loadBingPic();
 
     }
 
@@ -159,8 +173,6 @@ public class WeatherActivity extends AppCompatActivity {
                             editor.putString("weather", responseText);
                             editor.apply();
                             showWeatherInfo(weather);
-//                            Intent intent = new Intent(this, AutoUpdateService.class);
-//                            startService(intent);
                         } else {
                             Toast.makeText(WeatherActivity.this, "啊，失败了...qaq", Toast.LENGTH_SHORT).show();
                         }
@@ -170,7 +182,7 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
-        loadBingPic();
+        loadUnsplashImage();
     }
 
     private void showWeatherInfo(Weather weather) {
@@ -214,18 +226,23 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
-
-    private void loadBingPic() {
-        final String bingPic = "https://source.unsplash.com/collection/1976082/800x600";
-//        SharedPreferences.Editor editor = PreferenceManager.
-//                getDefaultSharedPreferences(WeatherActivity.this).edit();
-//        editor.putString("bing_pic", bingPic);
-//        editor.apply();
+    private void loadUnsplashImage() {
+        final String unsplashImage = "https://source.unsplash.com/collection/893395/900x1600";
+        Uri uri = Uri.parse(unsplashImage);
+        ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+                .setProgressiveRenderingEnabled(true)
+                .build();
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setImageRequest(request)
+                .setOldController(bingPicImg.getController())
+                .build();
+        bingPicImg.setController(controller);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
+                bingPicImg.setImageURI(unsplashImage);
             }
         });
+
     }
 }

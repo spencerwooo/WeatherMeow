@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="450dp"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="15dp"
-    android:background="#2c2c2c">
+    android:elevation="5dp">
 
-    <ImageView
-        android:id="@+id/bing_pic_img"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="BG_IMG"
-        android:scaleType="center" />
+        android:layout_height="450dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/bing_pic_img"
-        android:orientation="vertical"
-        android:padding="15dp">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/bing_pic_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="BG_IMG"
+            android:scaleType="center"
+            fresco:roundedCornerRadius="12dp"
+            fresco:placeholderImage="@color/holdingColor"/>
 
-        <TextView
-            android:id="@+id/weather_info_text"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/app_name"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:layout_alignBottom="@id/bing_pic_img"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <TextView
-            android:id="@+id/degree_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:textColor="#fff"
-            android:textSize="60sp" />
+            <TextView
+                android:id="@+id/weather_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/app_name"
+                android:textColor="#fff"
+                android:textSize="20sp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/degree_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textColor="#fff"
+                android:textSize="60sp" />
 
+        </LinearLayout>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
