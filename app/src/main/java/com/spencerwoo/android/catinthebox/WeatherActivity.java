@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.imagepipeline.core.ImagePipeline;
@@ -42,6 +44,7 @@ public class WeatherActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public SwipeRefreshLayout swipeRefresh;
     private Button navButton;
+    private Button refreshImage;
     private String mWeatherId;
 
     private ScrollView weatherLayout;
@@ -83,6 +86,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navButton = findViewById(R.id.nav_button);
+        refreshImage = findViewById(R.id.refresh_image);
 
         forecastLayout = findViewById(R.id.forecast_layout);
         aqiText = findViewById(R.id.aqi_text);
@@ -104,6 +108,7 @@ public class WeatherActivity extends AppCompatActivity {
             Weather weather = Utility.handleWeatherResponse(weatherString);
             mWeatherId = weather.basic.weatherId;
             showWeatherInfo(weather);
+            loadUnsplashImage();
         } else {
             // If there's no local info, get from server
             mWeatherId = getIntent().getStringExtra("weather_id");
@@ -120,7 +125,8 @@ public class WeatherActivity extends AppCompatActivity {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this);
                 long lastUpdateTime = preferences.getLong("image_update_time", 0);
 
-                if (updateTime - lastUpdateTime > 24 * 60 * 60 * 3600) {
+                // Update every other hour
+                if (updateTime - lastUpdateTime > 60 * 60 * 3600) {
                     final ImagePipeline imagePipeline = Fresco.getImagePipeline();
                     imagePipeline.clearCaches();
                 }
@@ -137,6 +143,21 @@ public class WeatherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+        refreshImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final ImagePipeline imagePipeline = Fresco.getImagePipeline();
+                imagePipeline.clearCaches();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        YoYo.with(Techniques.RotateIn).duration(1000).repeat(3).playOn(findViewById(R.id.refresh_image));
+                    }
+                });
+                loadUnsplashImage();
             }
         });
 

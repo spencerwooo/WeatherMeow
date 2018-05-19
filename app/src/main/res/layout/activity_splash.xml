@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/splash_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/splash_text"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:src="@mipmap/icon"
+        android:elevation="20dp"/>
+
+    <TextView
+        android:id="@+id/splash_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="110dp"
+        android:text="Weather Meow"
+        android:elevation="20dp"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textColor="@color/colorLogo"/>
+
+</RelativeLayout>
