@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/city_chooser"
+        android:title="选择城市" />
+
+    <item
+        android:id="@+id/about"
+        android:title="关于我们" />
+
+    <item
+        android:id="@+id/version"
+        android:title="版本信息" />
+
+
+</menu>

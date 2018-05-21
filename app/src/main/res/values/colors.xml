@@ -2,9 +2,12 @@
 <resources>
     <!--<color name="colorPrimary">#3F51B5</color>-->
     <color name="colorPrimary">#2C2C2C</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#2C2C2C</color>
     <color name="colorAccent">#FF4081</color>
     <color name="holdingColor">#2C2C2C</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorLogo">#112138</color>
+
+    <color name="githubPrimary">#24292E</color>
+    <color name="githubPrimaryLight">#404448</color>
 </resources>

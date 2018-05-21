@@ -18,8 +18,8 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="#2c2c2c"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="60sp"/>
 
         <TextView
             android:id="@+id/title_update_time"

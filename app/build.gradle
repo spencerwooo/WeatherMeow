@@ -36,4 +36,8 @@ dependencies {
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.3@aar'
     compile 'com.android.support:support-compat:26.1.0'
+    compile 'com.yalantis:phoenix:1.2.3'
+    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+    compile 'com.github.medyo:fancybuttons:1.8.4'
+    compile 'com.scalified:fab:1.1.3'
 }

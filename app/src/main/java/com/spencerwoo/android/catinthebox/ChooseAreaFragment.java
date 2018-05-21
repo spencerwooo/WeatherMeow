@@ -3,6 +3,7 @@ package com.spencerwoo.android.catinthebox;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -16,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.spencerwoo.android.catinthebox.db.City;
 import com.spencerwoo.android.catinthebox.db.Country;
 import com.spencerwoo.android.catinthebox.db.Province;
@@ -92,7 +94,7 @@ public class ChooseAreaFragment extends Fragment {
                     } else if (getActivity() instanceof WeatherActivity) {
                         WeatherActivity activity = (WeatherActivity) getActivity();
                         activity.drawerLayout.closeDrawers();
-                        activity.swipeRefresh.setRefreshing(true);
+                        activity.pullToRefreshView.setRefreshing(true);
                         activity.requestWeather(weatherId);
                     }
 
