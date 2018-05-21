@@ -4,7 +4,7 @@
 
 ![love](https://img.shields.io/badge/Made%20with-LOVE-ff69b4.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/spencerwoo98/CatInTheBox)
+[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/spencerwoo98/WeatherMeow)
 
 </div>
 
@@ -12,25 +12,36 @@
 
 # Things to know
 
-> Proudly produced by [CatInTheBox.Inc](https://spencerwoo.com)
+This project is to pay tribute to my Java and Android Development teacher [Mr.Jin](http://jinxuliang.com).
 
-This project is to pay tribute to my Java and Android Development teacher [Mr.Jin](http://jinxuliang.com) who is a spectacular man with great knowledge and is willing to give.
-
-The APP: **WEATHER MEOW** is basically a simple application to show the current weather. It is built according to, but not all based on, **Material Design Guidelines.**
+The APP: **WEATHER MEOW** is a simple application to show the current weather. It is built according to, but not all based on, **Material Design Guidelines.**
 
 The main UI is to pay tribute to Apple's App Store Design (iOS 11.3 Version).
 
-# Dependencies
+![img](https://i.loli.net/2018/05/21/5b025f44732a2.jpg)
+
+> Proudly produced by [CatInTheBox.Inc](https://spencerwoo.com)
+
+# Special Thanks to:
 
 - [OkHttp by Square](https://github.com/square/okhttp)
-- SQLite
 - [Gson by Google](https://github.com/google/gson)
 - [Glide by Bump Technologies](https://github.com/bumptech/glide)
+- [Fresco by Facebook](https://github.com/facebook/fresco)
+- [Android View Animations by daimajia](https://github.com/daimajia/AndroidViewAnimations)
+- [Pheonix Pull to refresh](https://github.com/Yalantis/Phoenix) (Oh my god, I love this animation sooooooo much!)
+
+![img](https://i.loli.net/2018/05/21/5b02608c9d48e.gif)
+
+- [Immersion Bar by gyf-dev](https://github.com/gyf-dev/ImmersionBar)
+- [Floating Action Button Library for Android by Scalified](https://github.com/Scalified/fab)
 
 # Sources
 
 - Weather APIs by [和风天气](https://www.heweather.com/)
 - Staggering images by [Unsplash](https://unsplash.com/)
+
+According to Heweather API Guidelines, APPs of personal use can only request 1000 times per day, thus do please use with caution when the APP fails to fetch weather information.
 
 # Contributing
 
