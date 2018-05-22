@@ -9,7 +9,7 @@
 
 </div>
 
-![img](https://i.loli.net/2018/04/21/5adae5f43ba75.jpg)
+![img](https://i.loli.net/2018/05/22/5b043943c177d.png)
 
 # Things to know
 
@@ -19,7 +19,10 @@ The APP: **WEATHER MEOW** is a simple application to show the current weather. I
 
 The main UI is to pay tribute to Apple's App Store Design (iOS 11.3 Version).
 
-![img](https://i.loli.net/2018/05/21/5b025f44732a2.jpg)
+![img](https://i.loli.net/2018/05/22/5b0436267675a.png)
+
+![img](https://i.loli.net/2018/05/22/5b04363070f24.png)
+
 
 > Proudly produced by [CatInTheBox.Inc](https://spencerwoo.com)
 
