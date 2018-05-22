@@ -254,7 +254,6 @@ public class WeatherActivity extends AppCompatActivity {
         sportText.setText(sport);
 
         weatherLayout.setVisibility(View.VISIBLE);
-
     }
 
     private void loadUnsplashImage() {
@@ -294,7 +293,7 @@ public class WeatherActivity extends AppCompatActivity {
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(WeatherActivity.this);
                         alertDialogBuilder.setMessage("\nWeather Meow Version 1.0");
                         alertDialogBuilder.setTitle("版本信息");
-                        alertDialogBuilder.setIcon(R.mipmap.icon);
+                        alertDialogBuilder.setIcon(R.mipmap.meow);
                         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
