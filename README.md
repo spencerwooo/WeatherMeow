@@ -4,6 +4,7 @@
 
 ![love](https://img.shields.io/badge/Made%20with-LOVE-ff69b4.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<a data-role="dummy" href="https://insight.io/github.com/spencerwoo98/WeatherMeow?source=0" title="View this repo on Insight.io" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="104" height="20"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"></stop><stop offset="1" stop-opacity=".1"></stop></linearGradient><clipPath id="a"><rect width="104" height="20" rx="3" fill="#fff"></rect></clipPath><g clip-path="url(#a)"><path fill="#555" d="M0 0h61v20H0z"></path><path fill="#4c1" d="M61 0h43v20H61z"></path><path fill="url(#b)" d="M0 0h104v20H0z"></path></g><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="30.5" y="15" fill="#010101" fill-opacity=".3">insight.io</text><text x="30.5" y="14">insight.io</text><text x="81.5" y="15" fill="#010101" fill-opacity=".3">Ready</text><text x="81.5" y="14">Ready</text></g></svg></a>
 [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/spencerwoo98/WeatherMeow)
 
 </div>

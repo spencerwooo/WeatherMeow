@@ -19,11 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            fab:button_color="@color/colorAccent"
-            fab:button_colorPressed="@color/colorAccent"
-            fab:button_colorRipple="@color/colorAccent"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="36dp"
+            fab:button_color="@color/pinkPrimary"
+            fab:button_colorPressed="@color/pinkPrimaryLight"
+            fab:button_colorRipple="@color/pinkPrimaryLight"
             fab:image="@drawable/star"/>
 
         <com.scalified.fab.ActionButton
@@ -33,10 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            fab:button_color="@color/githubPrimary"
-            fab:button_colorPressed="@color/githubPrimaryLight"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="36dp"
+            fab:button_color="@color/pinkPrimaryLight"
+            fab:button_colorPressed="@color/pinkPrimaryLight"
             fab:image="@drawable/github"/>
 
         <com.scalified.fab.ActionButton
@@ -46,22 +46,24 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            fab:button_color="@color/githubPrimary"
-            fab:button_colorPressed="@color/githubPrimaryLight"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="36dp"
+            fab:button_color="@color/pinkPrimaryLight"
+            fab:button_colorPressed="@color/pinkPrimaryLight"
             fab:image="@drawable/website"/>
 
     </RelativeLayout>
 
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="#3D3D3D"
         tools:context="com.spencerwoo.android.catinthebox.AboutActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/about_bkg"/>
 
         <ScrollView
             android:layout_width="match_parent"

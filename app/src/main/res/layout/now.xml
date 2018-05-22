@@ -44,20 +44,7 @@
                 android:textColor="#fff"
                 android:textSize="60sp" />
 
-
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/refresh_image"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/refresh"/>
 
     </RelativeLayout>
 

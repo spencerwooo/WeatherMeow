@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
     tools:context="com.spencerwoo.android.catinthebox.WeatherActivity">
+
+    <com.scalified.fab.ActionButton
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refresh_image"
+        android:elevation="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="36dp"
+        fab:button_color="@color/cyanPrimary"
+        fab:button_colorPressed="@color/cyanPrimaryLight"
+        fab:button_colorRipple="@color/cyanPrimaryLight"
+        fab:image="@drawable/shuffle"/>
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -20,17 +36,17 @@
                 android:id="@+id/weather_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:elevation="0dp"
                 android:overScrollMode="ifContentScrolls"
-                android:scrollbars="vertical"
-                android:elevation="0dp">
+                android:scrollbars="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fitsSystemWindows="true"
-                    android:orientation="vertical"
                     android:background="@color/colorWhite"
-                    android:clipToPadding="false">
+                    android:clipToPadding="false"
+                    android:fitsSystemWindows="true"
+                    android:orientation="vertical">
 
                     <include layout="@layout/title" />
 
@@ -81,8 +97,7 @@
             android:name="com.spencerwoo.android.catinthebox.ChooseAreaFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"/>
+            android:layout_gravity="start" />
 
     </android.support.v4.widget.DrawerLayout>
-
-</FrameLayout>
+</RelativeLayout>

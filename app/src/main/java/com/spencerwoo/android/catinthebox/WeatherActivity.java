@@ -3,7 +3,6 @@ package com.spencerwoo.android.catinthebox;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
@@ -11,22 +10,18 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -36,8 +31,10 @@ import com.facebook.imagepipeline.core.ImagePipeline;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.gyf.barlibrary.ImmersionBar;
+import com.scalified.fab.ActionButton;
 import com.spencerwoo.android.catinthebox.gson.Forcast;
 import com.spencerwoo.android.catinthebox.gson.Weather;
+import com.spencerwoo.android.catinthebox.util.CircleProgressBarDrawable;
 import com.spencerwoo.android.catinthebox.util.HttpUtil;
 import com.spencerwoo.android.catinthebox.util.Utility;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -51,10 +48,10 @@ import okhttp3.Response;
 public class WeatherActivity extends AppCompatActivity {
 
     public DrawerLayout drawerLayout;
-//    public SwipeRefreshLayout swipeRefresh;
     public PullToRefreshView pullToRefreshView;
     private Button navButton;
-    private Button refreshImage;
+    private ActionButton refreshImage;
+
     private String mWeatherId;
 
     private ScrollView weatherLayout;
@@ -108,8 +105,6 @@ public class WeatherActivity extends AppCompatActivity {
 
         bingPicImg = findViewById(R.id.bing_pic_img);
 
-//        swipeRefresh = findViewById(R.id.swipe_refresh);
-//        swipeRefresh.setColorSchemeResources(R.color.holdingColor);
         pullToRefreshView = findViewById(R.id.swipe_refresh);
 
         // Get weather info
@@ -168,18 +163,12 @@ public class WeatherActivity extends AppCompatActivity {
         refreshImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                YoYo.with(Techniques.Tada).duration(1000).playOn(refreshImage);
                 final ImagePipeline imagePipeline = Fresco.getImagePipeline();
                 imagePipeline.clearCaches();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        YoYo.with(Techniques.RotateIn).duration(1000).repeat(3).playOn(findViewById(R.id.refresh_image));
-                    }
-                });
                 loadUnsplashImage();
             }
         });
-
     }
 
 
@@ -279,6 +268,7 @@ public class WeatherActivity extends AppCompatActivity {
                 .setOldController(bingPicImg.getController())
                 .build();
         bingPicImg.setController(controller);
+        bingPicImg.getHierarchy().setProgressBarImage(new CircleProgressBarDrawable());
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -308,7 +298,6 @@ public class WeatherActivity extends AppCompatActivity {
                         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-//                                Toast.makeText(WeatherActivity.this, "https://spencerwoo.com", Toast.LENGTH_LONG).show();
                             }
                         });
                         AlertDialog alertDialog = alertDialogBuilder.create();

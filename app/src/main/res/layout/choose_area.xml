@@ -7,8 +7,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/side_bar_bkg">
+        android:layout_height="250dp"
+        android:background="@drawable/drawer_bkg">
 
         <TextView
             android:id="@+id/title_text"
@@ -18,7 +18,7 @@
             android:layout_marginBottom="15dp"
             android:layout_marginStart="15dp"
             android:text="@string/app_name"
-            android:textColor="#2c2c2c"
+            android:textColor="@color/colorWhite"
             android:textSize="45sp" />
 
         <Button
@@ -28,7 +28,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="35dp"
             android:layout_alignParentStart="true"
-            android:background="@drawable/back"/>
+            android:background="@drawable/backwhite"/>
 
     </RelativeLayout>
 

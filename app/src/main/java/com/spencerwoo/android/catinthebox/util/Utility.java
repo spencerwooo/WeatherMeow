@@ -79,7 +79,7 @@ public class Utility {
         if (!TextUtils.isEmpty(response)) {
             try {
                 JSONArray allCountries = new JSONArray(response);
-                for (int i = 0; i <allCountries.length(); i++) {
+                for (int i = 0; i < allCountries.length(); i++) {
                     JSONObject countryObject = allCountries.getJSONObject(i);
                     Country country = new Country();
                     country.setCountryName(countryObject.getString("name"));

@@ -22,9 +22,9 @@ public class AboutActivity extends AppCompatActivity{
     private TextView githubStar;
     private ImageView aboutIcon;
 
-    private com.scalified.fab.ActionButton fab;
-    private com.scalified.fab.ActionButton fabGitHub;
-    private com.scalified.fab.ActionButton fabWebsite;
+    private ActionButton fab;
+    private ActionButton fabGitHub;
+    private ActionButton fabWebsite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
